@@ -7,7 +7,7 @@ apt upgrade
 
 ====NGINX========
 apt install nginx
-service nginx status
+service nginx status / sudo systemctl start nginx
 ufw allow 'Nginx Full'
 ufw status
 nano /var/www/html/index.nginx-debian.html
