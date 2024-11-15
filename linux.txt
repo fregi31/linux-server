@@ -1,0 +1,79 @@
+ssh->via terminal
+sudo su
+whoami
+htop
+apt update
+apt upgrade
+
+====NGINX========
+apt install nginx
+service nginx status
+ufw allow 'Nginx Full'
+ufw status
+nano /var/www/html/index.nginx-debian.html
+
+===========docker-rise==========
+keluar dari root asdasdasd@asdasdasd
+sudo apt update
+sudo apt install apt-transport-https ca-certificates curl software-properties-common
+
+GPG REPO:
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+
+APT REPO SOURCES:
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+UPDATE INTERNAL REPO SYSTEM
+sudo apt update
+
+verify repo from docker:
+apt-cache policy docker-ce
+
+INSTALL:
+sudo apt install docker-ce
+
+CHECK STATUS:
+sudo systemctl status docker
+
+ROOTLESS:
+sudo usermod -aG docker ${USER}
+exit
+login ssh
+Check Rootless:
+groups
+cuywebserver adm cdrom sudo dip plugdev lxd docker -> fix
+
+check docker access:
+docker info
+root->docker info
+exit root
+docker images
+docker ps
+docker --version
+
+
+=========owncloud========
+mkdir ~/owncloud
+cd ~/owncloud/
+pwd
+nano .env
+OWNCLOUD_VERSION=10.11
+OWNCLOUD_DOMAIN=SERVER:8080
+OWNCLOUD_TRUSTED_DOMAINS="192.168.5.40"
+ADMIN_USERNAME=fregi
+ADMIN_PASSWORD=salafa
+HTTP_PORT=8080
+
+wget https://raw.githubusercontent.com/owncloud/docs-server/master/modules/admin_manual/examples/installation/docker/docker-compose.yml
+
+ls
+ll
+
+docker-compose up
+apt install docker-compose
+sudo apt install docker-compose
+docker-compose up
+docker-compose up --detach --build
+docker-compose ps
+car .env
+
